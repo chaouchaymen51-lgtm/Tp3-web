@@ -1,8 +1,11 @@
 body{
     background:url('fond_jaune.png') ;
     font-family: 'Trebuchet MS';
-    width: 900px;
+    width: 100%;
+    max-width: 900px;
     margin: auto;
+    padding: 0 15px;
+    box-sizing: border-box;
 }
 section h1, nav a{
    font-family: serif ;
@@ -61,7 +64,7 @@ section {
 section h1 {
   font-size: 1.5em;
 }
-
+/*
 article,aside {
   display: inline-block;
   vertical-align: top;
@@ -72,7 +75,34 @@ article {
   width: 625px;
   margin-right: 15px;
 }
-
+*/
+section {
+display: flex;
+flex-wrap: wrap;
+gap: 15px;
+align-items: start;
+}
+article {
+flex-grow: 2;
+flex-shrink: 1;
+flex-basis: 600px;
+}
+nav{
+  display:flex;
+  justify-content:flex-end;
+}
+nav ul{
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  list-style: none;
+}
+@media (min-width:576px){
+  section{
+    flex-direction: rox;
+    flex-wrap: wrap;
+  }
+}
 .ico_categorie {
   vertical-align: middle;
   margin-right: 8px;
@@ -91,6 +121,11 @@ aside {
   padding: 10px;
   color: white;
   font-size: 0.9em;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 230px;
+  align-self: center;
+
 }
 
 #photo_ahmed,
@@ -107,4 +142,8 @@ aside {
 footer {
   font-size: 1.1em;
   text-align: center;
+}
+video{
+  max-width: 100%;
+  height:auto;
 }
